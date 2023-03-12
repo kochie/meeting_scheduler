@@ -5,6 +5,7 @@ specifiers:
   '@headlessui/react': ^1.7.13
   '@heroicons/react': ^2.0.16
   '@tailwindcss/forms': ^0.5.3
+  '@types/node': ^18.15.0
   '@types/react': 18.0.28
   autoprefixer: ^10.4.14
   formik: ^2.2.9
@@ -28,6 +29,7 @@ devDependencies:
   '@headlessui/react': 1.7.13_biqbaboplfbrettd7655fr4n2y
   '@heroicons/react': 2.0.16_react@18.2.0
   '@tailwindcss/forms': 0.5.3_tailwindcss@3.2.7
+  '@types/node': 18.15.0
   '@types/react': 18.0.28
   autoprefixer: 10.4.14_postcss@8.4.21
   postcss: 8.4.21
@@ -752,6 +754,10 @@ packages:
   /@types/cookie/0.3.3:
     resolution: {integrity: sha512-LKVP3cgXBT9RYj+t+9FDKwS5tdI+rPBXaNSkma7hvqy35lc7mAokC2zsqWJH0LaqIt3B962nuYI77hsJoT1gow==}
     dev: false
+
+  /@types/node/18.15.0:
+    resolution: {integrity: sha512-z6nr0TTEOBGkzLGmbypWOGnpSpSIBorEhC4L+4HeQ2iezKCi4f77kyslRwvHeNitymGQ+oFyIWGP96l/DPSV9w==}
+    dev: true
 
   /@types/prop-types/15.7.5:
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
