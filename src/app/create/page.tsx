@@ -2,6 +2,7 @@
 import { useReducer } from "react";
 import { ConfirmForm } from "./ConfirmForm";
 import { InitalForm } from "./InitalForm";
+import { SetupMfaForm } from "./SetupMfsForm";
 
 function reducer(state, action) {
   switch (action.type) {
@@ -59,6 +60,9 @@ export default function Page() {
       )}
       {state.step === SINGUP_STEP.CONFIRM && (
         <ConfirmForm onComplete={() => dispatch({ type: SINGUP_STEP.MFA })} />
+      )}
+      {state.step === SINGUP_STEP.MFA && (
+        <SetupMfaForm onComplete={() => dispatch({ type: SINGUP_STEP.DONE })} />
       )}
     </div>
   );

@@ -21,6 +21,7 @@ export const InitalForm = ({ onComplete }) => {
               attributes: {
                 email: values.email,
               },
+              autoSignIn: { enabled: true },
             });
             setSubmitting(false);
             onComplete();
