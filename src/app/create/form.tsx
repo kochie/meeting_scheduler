@@ -3,7 +3,7 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { Auth } from "@aws-amplify/auth";
 
-Auth.configure({});
+// Auth.configure({});
 
 export default function CreateForm() {
   return (

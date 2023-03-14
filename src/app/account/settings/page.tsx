@@ -1,4 +1,5 @@
 "use client";
+import { Suspense } from "react";
 import { ProfileForm } from "./ProfileForm";
 
 export default function Page() {
@@ -20,7 +21,9 @@ export default function Page() {
             </div>
           </div>
           <div className="mt-5 md:col-span-2 md:mt-0">
-            <ProfileForm />
+            <Suspense fallback="Loading...">
+              <ProfileForm />
+            </Suspense>
           </div>
         </div>
       </div>

@@ -1,5 +1,5 @@
 "use client";
-import { Auth, CognitoUser } from "@aws-amplify/auth";
+import type { CognitoUser } from "@aws-amplify/auth";
 import { Form, Formik } from "formik";
 import { useEffect, useReducer, useState } from "react";
 import { LoginForm } from "./LoginForm";
@@ -7,6 +7,7 @@ import { MfaForm } from "./MfaForm";
 import { MfaSetupForm } from "./MfaSetupForm";
 import { SubmitForm } from "./SubmitForm";
 import { useRouter } from "next/navigation";
+import { withSSRContext } from "aws-amplify";
 
 function reducer(state, action) {
   switch (action.type) {
@@ -23,11 +24,11 @@ function reducer(state, action) {
   }
 }
 
-Auth.configure({
-  userPoolId: process.env.NEXT_PUBLIC_USERPOOL_ID,
-  userPoolWebClientId: process.env.NEXT_PUBLIC_USERPOOL_CLIENT_ID,
-  region: process.env.NEXT_PUBLIC_REGION,
-});
+// Auth.configure({
+//   userPoolId: process.env.NEXT_PUBLIC_USERPOOL_ID,
+//   userPoolWebClientId: process.env.NEXT_PUBLIC_USERPOOL_CLIENT_ID,
+//   region: process.env.NEXT_PUBLIC_REGION,
+// });
 
 enum SIGNIN_STEP {
   INITAL,
@@ -44,6 +45,7 @@ export default function Page() {
   const [state, dispatch] = useReducer(reducer, initialState);
   const [verifyCode, setVerifyCode] = useState("");
   const [user, setUser] = useState<CognitoUser>();
+  const { Auth } = withSSRContext();
 
   async function MfaSetup(user: CognitoUser) {
     const mfaVerify = await Auth.setupTOTP(user);

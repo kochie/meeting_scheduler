@@ -4,19 +4,26 @@ import { useMutation, useQuery } from "@apollo/client";
 import { GET_PROFILE, SET_PROFILE } from "@/queries/PROFILE";
 import { Auth } from "@aws-amplify/auth";
 import { use } from "react";
-import Notification from "@/components/notifications";
+// import Notification from "@/components/notifications";
+import { redirect } from "next/navigation";
 import { useNotification } from "@/components/notifications/context";
 
-Auth.configure({
-  userPoolId: process.env.NEXT_PUBLIC_USERPOOL_ID,
-  userPoolWebClientId: process.env.NEXT_PUBLIC_USERPOOL_CLIENT_ID,
-  region: process.env.NEXT_PUBLIC_REGION,
-});
+// Auth.configure({
+//   userPoolId: process.env.NEXT_PUBLIC_USERPOOL_ID,
+//   userPoolWebClientId: process.env.NEXT_PUBLIC_USERPOOL_CLIENT_ID,
+//   region: process.env.NEXT_PUBLIC_REGION,
+// });
 
 export const ProfileForm = () => {
-  const userId = use(
-    Auth.currentAuthenticatedUser().then((user) => user.attributes.email)
-  );
+  let userId = "";
+  try {
+    userId = use(
+      Auth.currentAuthenticatedUser().then((user) => user.attributes.email)
+    );
+  } catch (e) {
+    console.log(e);
+    redirect("/login");
+  }
   // console.log(userId);
   const { loading, error, data } = useQuery(GET_PROFILE, {
     variables: {

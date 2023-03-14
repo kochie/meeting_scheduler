@@ -4,11 +4,11 @@ import { Field, Form, Formik } from "formik";
 import { useEffect, useState } from "react";
 import { QRCodeSVG } from "qrcode.react";
 
-Auth.configure({
-  userPoolId: process.env.NEXT_PUBLIC_USERPOOL_ID,
-  userPoolWebClientId: process.env.NEXT_PUBLIC_USERPOOL_CLIENT_ID,
-  region: process.env.NEXT_PUBLIC_REGION,
-});
+// Auth.configure({
+//   userPoolId: process.env.NEXT_PUBLIC_USERPOOL_ID,
+//   userPoolWebClientId: process.env.NEXT_PUBLIC_USERPOOL_CLIENT_ID,
+//   region: process.env.NEXT_PUBLIC_REGION,
+// });
 
 //      const str = "otpauth://totp/AWSCognito:"+ username + "?secret=" + code + "&issuer=" + issuer;
 //      <QRCode value={str}/>

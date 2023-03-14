@@ -16,11 +16,11 @@ import {
   MagnifyingGlassIcon,
 } from "@heroicons/react/20/solid";
 
-Auth.configure({
-  userPoolId: process.env.NEXT_PUBLIC_USERPOOL_ID,
-  userPoolWebClientId: process.env.NEXT_PUBLIC_USERPOOL_CLIENT_ID,
-  region: process.env.NEXT_PUBLIC_REGION,
-});
+// Auth.configure({
+//   userPoolId: process.env.NEXT_PUBLIC_USERPOOL_ID,
+//   userPoolWebClientId: process.env.NEXT_PUBLIC_USERPOOL_CLIENT_ID,
+//   region: process.env.NEXT_PUBLIC_REGION,
+// });
 
 export default function Page() {
   const [token, setToken] = useState("");

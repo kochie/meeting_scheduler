@@ -2,11 +2,11 @@
 import { Auth } from "@aws-amplify/auth";
 import { Field, Form, Formik } from "formik";
 
-Auth.configure({
-  userPoolId: process.env.NEXT_PUBLIC_USERPOOL_ID,
-  userPoolWebClientId: process.env.NEXT_PUBLIC_USERPOOL_CLIENT_ID,
-  region: process.env.NEXT_PUBLIC_REGION,
-});
+// Auth.configure({
+//   userPoolId: process.env.NEXT_PUBLIC_USERPOOL_ID,
+//   userPoolWebClientId: process.env.NEXT_PUBLIC_USERPOOL_CLIENT_ID,
+//   region: process.env.NEXT_PUBLIC_REGION,
+// });
 
 export const InitalForm = ({ onComplete }) => {
   return (
