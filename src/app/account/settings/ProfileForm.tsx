@@ -4,15 +4,8 @@ import { useMutation, useQuery } from "@apollo/client";
 import { GET_PROFILE, SET_PROFILE } from "@/queries/PROFILE";
 import { Auth } from "@aws-amplify/auth";
 import { use } from "react";
-// import Notification from "@/components/notifications";
 import { redirect } from "next/navigation";
 import { useNotification } from "@/components/notifications/context";
-
-// Auth.configure({
-//   userPoolId: process.env.NEXT_PUBLIC_USERPOOL_ID,
-//   userPoolWebClientId: process.env.NEXT_PUBLIC_USERPOOL_CLIENT_ID,
-//   region: process.env.NEXT_PUBLIC_REGION,
-// });
 
 export const ProfileForm = () => {
   const userId = use(
@@ -29,22 +22,15 @@ export const ProfileForm = () => {
     redirect("/login");
   }
 
-  // console.log(userId);
   const { loading, error, data } = useQuery(GET_PROFILE, {
     variables: {
       userId,
     },
   });
 
-  // const data = { getProfile: { username: "test" } };
-  // const userId = "test";
   const [setProfile] = useMutation(SET_PROFILE);
   const addNotification = useNotification();
 
-  // console.log("userId", userId, data?.getProfile?.username);
-
-  if (loading || !data) return <p>Loading...</p>;
-  console.log(data);
   return (
     <Formik
       initialValues={{
