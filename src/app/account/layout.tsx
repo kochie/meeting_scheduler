@@ -16,6 +16,7 @@ import {
 } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Notification from "@/components/notifications";
 
 const navigation = [
   { name: "Home", href: "/account", icon: HomeIcon, current: true },

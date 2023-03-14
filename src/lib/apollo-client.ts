@@ -54,7 +54,7 @@ function createApolloClient() {
     queryDeduplication: false,
     defaultOptions: {
       watchQuery: {
-        fetchPolicy: "cache-first",
+        fetchPolicy: "cache-and-network",
       },
     },
   });

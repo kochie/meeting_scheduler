@@ -4,6 +4,8 @@ import { useMutation, useQuery } from "@apollo/client";
 import { GET_PROFILE, SET_PROFILE } from "@/queries/PROFILE";
 import { Auth } from "@aws-amplify/auth";
 import { use } from "react";
+import Notification from "@/components/notifications";
+import { useNotification } from "@/components/notifications/context";
 
 Auth.configure({
   userPoolId: process.env.NEXT_PUBLIC_USERPOOL_ID,
@@ -25,17 +27,27 @@ export const ProfileForm = () => {
   // const data = { getProfile: { username: "test" } };
   // const userId = "test";
   const [setProfile] = useMutation(SET_PROFILE);
-  console.log("userId", userId, data?.getProfile?.username);
+  const addNotification = useNotification();
+
+  // console.log("userId", userId, data?.getProfile?.username);
 
   if (loading || !data) return <p>Loading...</p>;
+  console.log(data);
   return (
     <Formik
-      initialValues={{ username: data?.getProfile?.username ?? "" }}
+      initialValues={{
+        username: data?.getProfile?.username ?? "",
+        about: data?.getProfile?.about ?? "",
+      }}
       onSubmit={async (values) => {
-        console.log(userId);
+        console.log(userId, values);
         await setProfile({
-          variables: { userId, profile: { username: values.username } },
+          variables: {
+            userId,
+            profile: { username: values.username, about: values.about },
+          },
         });
+        addNotification({ message: "Profile updated" });
       }}
     >
       {({ values }) => (
@@ -74,13 +86,13 @@ export const ProfileForm = () => {
                   About
                 </label>
                 <div className="mt-2">
-                  <textarea
+                  <Field
+                    as="textarea"
                     id="about"
                     name="about"
                     rows={3}
                     className="mt-1 block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:py-1.5 sm:text-sm sm:leading-6"
-                    placeholder="you@example.com"
-                    defaultValue={""}
+                    placeholder="Superstar in the making"
                   />
                 </div>
                 <p className="mt-2 text-sm text-gray-500">
