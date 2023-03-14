@@ -1,3 +1,4 @@
+"use client";
 import { Calendar } from "@/components/calendar";
 import Cards from "@/components/cards";
 import Footer from "@/components/footer";
