@@ -15,15 +15,20 @@ import { useNotification } from "@/components/notifications/context";
 // });
 
 export const ProfileForm = () => {
-  let userId = "";
-  try {
-    userId = use(
-      Auth.currentAuthenticatedUser().then((user) => user.attributes.email)
-    );
-  } catch (e) {
-    console.log(e);
+  const userId = use(
+    Auth.currentAuthenticatedUser()
+      .catch(() => ({
+        attributes: {
+          email: "",
+        },
+      }))
+      .then((user) => user.attributes.email)
+  );
+
+  if (!userId) {
     redirect("/login");
   }
+
   // console.log(userId);
   const { loading, error, data } = useQuery(GET_PROFILE, {
     variables: {
