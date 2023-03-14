@@ -34,9 +34,7 @@ export const SetupMfaForm = ({ onComplete }) => {
           {({ values }) => (
             <Form className="space-y-6">
               <div>
-                <button onClick={() => getQrCode(values.email)}>
-                  Get QR Code
-                </button>
+                <button onClick={() => getQrCode()}>Get QR Code</button>
                 <span>{qrCode}</span>
                 <QRCodeSVG
                   value={`otpauth://totp/AWSCognito:${
