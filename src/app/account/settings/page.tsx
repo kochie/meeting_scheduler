@@ -21,9 +21,7 @@ export default function Page() {
             </div>
           </div>
           <div className="mt-5 md:col-span-2 md:mt-0">
-            <Suspense fallback="Loading...">
-              <ProfileForm />
-            </Suspense>
+            <ProfileForm />
           </div>
         </div>
       </div>
