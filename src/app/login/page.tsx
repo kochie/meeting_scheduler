@@ -132,7 +132,7 @@ export default function Page() {
                   {state.step === SIGNIN_STEP.DONE && (
                     <div className="text-center">Sign In Complete</div>
                   )}
-                  {SubmitForm}
+                  <SubmitForm />
                 </>
               </Form>
             )}

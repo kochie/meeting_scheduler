@@ -1,4 +1,5 @@
-export const SubmitForm = (
+"use client";
+export const SubmitForm = () => (
   <>
     <div>
       <button
