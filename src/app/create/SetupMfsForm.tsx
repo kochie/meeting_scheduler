@@ -105,7 +105,7 @@ export const SetupMfaForm = ({ onComplete }) => {
 
                 <div className="text-sm">
                   <a
-                    onClick={() => resendCode(values.email)}
+                    // onClick={() => resendCode(values.email)}
                     className="font-medium text-indigo-600 hover:text-indigo-500 cursor-pointer"
                   >
                     Resend Code
