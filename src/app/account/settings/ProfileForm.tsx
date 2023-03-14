@@ -1,3 +1,4 @@
+"use client";
 import { Field, Form, Formik } from "formik";
 
 import { useMutation, useQuery } from "@apollo/client";
