@@ -16,8 +16,6 @@ import {
 } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import Notification from "@/components/notifications";
-import { AmplifyClient } from "@/components/amplify";
 
 const navigation = [
   { name: "Home", href: "/account", icon: HomeIcon, current: true },
@@ -47,7 +45,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="min-h-full">
-      <AmplifyClient />
       <Transition.Root show={sidebarOpen} as={Fragment}>
         <Dialog
           as="div"
