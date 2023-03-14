@@ -7,7 +7,7 @@ import { MfaForm } from "./MfaForm";
 import { MfaSetupForm } from "./MfaSetupForm";
 import { SubmitForm } from "./SubmitForm";
 import { useRouter } from "next/navigation";
-import { withSSRContext } from "aws-amplify";
+import { Auth } from "@aws-amplify/auth";
 
 function reducer(state, action) {
   switch (action.type) {
@@ -45,7 +45,6 @@ export default function Page() {
   const [state, dispatch] = useReducer(reducer, initialState);
   const [verifyCode, setVerifyCode] = useState("");
   const [user, setUser] = useState<CognitoUser>();
-  const { Auth } = withSSRContext();
 
   async function MfaSetup(user: CognitoUser) {
     const mfaVerify = await Auth.setupTOTP(user);
