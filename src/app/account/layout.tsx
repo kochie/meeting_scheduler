@@ -1,6 +1,6 @@
 "use client";
 import { Dialog, Transition } from "@headlessui/react";
-import { Fragment, Suspense, useEffect, useReducer, useState } from "react";
+import { Fragment, useState } from "react";
 
 import {
   ClockIcon,
@@ -229,7 +229,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </nav>
         </div>
       </div>
-      <Suspense>{children}</Suspense>
+      {children}
     </div>
   );
 }
