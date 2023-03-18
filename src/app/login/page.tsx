@@ -8,6 +8,10 @@ import { MfaSetupForm } from "./MfaSetupForm";
 import { SubmitForm } from "./SubmitForm";
 import { useRouter } from "next/navigation";
 import { Auth } from "@aws-amplify/auth";
+import { withSSRContext } from "aws-amplify";
+// import { cookies } from 'next/headers';
+import { headers } from 'next/headers';
+import { AmplifyClient } from "@/components/amplify";
 
 function reducer(state, action) {
   switch (action.type) {
@@ -24,11 +28,11 @@ function reducer(state, action) {
   }
 }
 
-// Auth.configure({
-//   userPoolId: process.env.NEXT_PUBLIC_USERPOOL_ID,
-//   userPoolWebClientId: process.env.NEXT_PUBLIC_USERPOOL_CLIENT_ID,
-//   region: process.env.NEXT_PUBLIC_REGION,
-// });
+Auth.configure({
+  userPoolId: process.env.NEXT_PUBLIC_USERPOOL_ID,
+  userPoolWebClientId: process.env.NEXT_PUBLIC_USERPOOL_CLIENT_ID,
+  region: process.env.NEXT_PUBLIC_REGION,
+});
 
 enum SIGNIN_STEP {
   INITAL,
@@ -41,7 +45,11 @@ const initialState = {
   step: SIGNIN_STEP.INITAL,
 };
 
-export default function Page() {
+export default function Page({}) {
+  // const headersList = headers();
+  // const { Auth } = withSSRContext({ modules: [ClientAuth], req: {headers: headersList.get("cookie")} } )
+  // console.log(Auth)
+
   const [state, dispatch] = useReducer(reducer, initialState);
   const [verifyCode, setVerifyCode] = useState("");
   const [user, setUser] = useState<CognitoUser>();
@@ -58,7 +66,12 @@ export default function Page() {
     }
   }, [state.step]);
 
+  // const cookieStore = cookies();
+
   return (
+
+    <>
+      <AmplifyClient />
     <div className="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <img
@@ -139,5 +152,6 @@ export default function Page() {
         </div>
       </div>
     </div>
+    </>
   );
 }

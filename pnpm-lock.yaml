@@ -2,34 +2,36 @@ lockfileVersion: 5.4
 
 specifiers:
   '@apollo/client': ^3.7.10
-  '@aws-amplify/auth': ^5.1.12
+  '@aws-amplify/auth': ^5.1.14
   '@graphql-codegen/cli': 3.2.2
   '@graphql-codegen/client-preset': 2.1.1
   '@graphql-typed-document-node/core': ^3.1.2
   '@headlessui/react': ^1.7.13
   '@heroicons/react': ^2.0.16
   '@tailwindcss/forms': ^0.5.3
-  '@types/node': ^18.15.0
+  '@types/node': ^18.15.3
   '@types/react': 18.0.28
   amplify: ^0.0.11
   autoprefixer: ^10.4.14
-  aws-amplify: ^5.0.19
+  aws-amplify: ^5.0.20
   aws-crt: ^1.15.9
+  aws-jwt-verify: ^3.4.0
   dotenv: ^16.0.3
   encoding: ^0.1.13
   formik: ^2.2.9
   graphql: ^16.6.0
+  jose: ^4.13.1
   next: 13.2.4
   postcss: ^8.4.21
   qrcode.react: ^3.1.0
   react: 18.2.0
   react-dom: 18.2.0
   tailwindcss: ^3.2.7
-  typescript: 4.9.5
+  typescript: 5.0.2
   yup: ^1.0.2
 
 dependencies:
-  '@aws-amplify/auth': 5.1.12_encoding@0.1.13
+  '@aws-amplify/auth': 5.1.14_encoding@0.1.13
   '@graphql-typed-document-node/core': 3.1.2_graphql@16.6.0
   aws-crt: 1.15.9
   dotenv: 16.0.3
@@ -41,22 +43,24 @@ dependencies:
 
 devDependencies:
   '@apollo/client': 3.7.10_gdcq4dv6opitr3wbfwyjmanyra
-  '@graphql-codegen/cli': 3.2.2_3lxslkyhkrbtgfduwnfzitczwm
+  '@graphql-codegen/cli': 3.2.2_ujxv3cmwv3unuq5cvjlxb6gvse
   '@graphql-codegen/client-preset': 2.1.1_rjjjs2nwgns3bcvnnqb5eu5nry
   '@headlessui/react': 1.7.13_biqbaboplfbrettd7655fr4n2y
   '@heroicons/react': 2.0.16_react@18.2.0
   '@tailwindcss/forms': 0.5.3_tailwindcss@3.2.7
-  '@types/node': 18.15.0
+  '@types/node': 18.15.3
   '@types/react': 18.0.28
   amplify: 0.0.11
   autoprefixer: 10.4.14_postcss@8.4.21
-  aws-amplify: 5.0.19_tyfqhf7tbsvfwus6scjzdkavli
+  aws-amplify: 5.0.20_tyfqhf7tbsvfwus6scjzdkavli
+  aws-jwt-verify: 3.4.0
   encoding: 0.1.13
   graphql: 16.6.0
+  jose: 4.13.1
   postcss: 8.4.21
   qrcode.react: 3.1.0_react@18.2.0
   tailwindcss: 3.2.7_postcss@8.4.21
-  typescript: 4.9.5
+  typescript: 5.0.2
 
 packages:
 
@@ -142,11 +146,11 @@ packages:
       - encoding
     dev: true
 
-  /@aws-amplify/analytics/6.0.19:
-    resolution: {integrity: sha512-Ki1okTNfYcjwsTyrknDHskJyOrmNeCshNIs0h5QDaf7jC7MJZfDOngNOrnmhTatC9aKpyLsRPUuyScOtPANHQg==}
+  /@aws-amplify/analytics/6.0.20:
+    resolution: {integrity: sha512-aBEDrr6VdRdJN/jpSutSR2+ZgNKGT8485Qwl5NLoY/k3ONJuP+nl0gLbgYz2BCaiwMGMBJGxcai7x5pN2f5a3w==}
     dependencies:
-      '@aws-amplify/cache': 5.0.19
-      '@aws-amplify/core': 5.1.2
+      '@aws-amplify/cache': 5.0.20
+      '@aws-amplify/core': 5.1.3
       '@aws-sdk/client-firehose': 3.6.1
       '@aws-sdk/client-kinesis': 3.6.1
       '@aws-sdk/client-personalize-events': 3.6.1
@@ -159,14 +163,14 @@ packages:
       - react-native
     dev: true
 
-  /@aws-amplify/api-graphql/3.1.7_encoding@0.1.13:
-    resolution: {integrity: sha512-1hI7J8L6YOOkVX+zriyued1gqJlcpghi/C6oB3crwfE/s+wQMJ/eI3qBvBCQ7eFFaKYYkVOQ4hB3zHlxDml5Hg==}
+  /@aws-amplify/api-graphql/3.1.8_encoding@0.1.13:
+    resolution: {integrity: sha512-AF1w+puUnmezIncRc5d3P48YMKKyBLRufvrVybSXx0fPi0vJZxGhVuGSbsz11VzlwfQ3T7T/w+IeNQvOIK4iNQ==}
     dependencies:
-      '@aws-amplify/api-rest': 3.0.19
-      '@aws-amplify/auth': 5.1.13_encoding@0.1.13
-      '@aws-amplify/cache': 5.0.19
-      '@aws-amplify/core': 5.1.2
-      '@aws-amplify/pubsub': 5.1.2_encoding@0.1.13
+      '@aws-amplify/api-rest': 3.0.20
+      '@aws-amplify/auth': 5.1.14_encoding@0.1.13
+      '@aws-amplify/cache': 5.0.20
+      '@aws-amplify/core': 5.1.3
+      '@aws-amplify/pubsub': 5.1.3_encoding@0.1.13
       graphql: 15.8.0
       tslib: 1.14.1
       uuid: 3.4.0
@@ -177,10 +181,10 @@ packages:
       - react-native
     dev: true
 
-  /@aws-amplify/api-rest/3.0.19:
-    resolution: {integrity: sha512-wBNUUFyYU9FfX2yNN0nDDuiGZpXLZmtKjewj4v/Y8Xirw/8JSFtT6LF+l296VB4YInfS1RrilFw+KmvVSvWZZg==}
+  /@aws-amplify/api-rest/3.0.20:
+    resolution: {integrity: sha512-5tnWIn2w/RsA9i6FsSIfFg1bGEFNIZQamkA1PVtfaqiYKmoHveWlMxWNaboagk9MfCwEoEi+K5bOIfttawieJA==}
     dependencies:
-      '@aws-amplify/core': 5.1.2
+      '@aws-amplify/core': 5.1.3
       axios: 0.26.0
       tslib: 1.14.1
     transitivePeerDependencies:
@@ -188,11 +192,11 @@ packages:
       - react-native
     dev: true
 
-  /@aws-amplify/api/5.0.19_encoding@0.1.13:
-    resolution: {integrity: sha512-Pr6WE4z6Z2oQKjztaxo9hvkDEqhubEYjGDj5y/DUVDhXx5nt+A5TVuU4178oGzDdaFPONXf07bjlWD6iC7o7jw==}
+  /@aws-amplify/api/5.0.20_encoding@0.1.13:
+    resolution: {integrity: sha512-nCuHsQduEsQgBXuwoRclqooBSLyxzdXvf1iltoWZtaGu6eOlsf53ry1O0OGtOuwsBwqbBjn3LXWg4HAp9hnwwA==}
     dependencies:
-      '@aws-amplify/api-graphql': 3.1.7_encoding@0.1.13
-      '@aws-amplify/api-rest': 3.0.19
+      '@aws-amplify/api-graphql': 3.1.8_encoding@0.1.13
+      '@aws-amplify/api-rest': 3.0.20
       tslib: 1.14.1
     transitivePeerDependencies:
       - debug
@@ -200,39 +204,27 @@ packages:
       - react-native
     dev: true
 
-  /@aws-amplify/auth/5.1.12_encoding@0.1.13:
-    resolution: {integrity: sha512-VvLgUwZaJxs/SP/raGOWrT0w4uYvQ3NKx1Phv/Xs3WycihJx22FsFpCkpCbzHv1z2+1MDFpZFLfK1322xoMTdg==}
+  /@aws-amplify/auth/5.1.14_encoding@0.1.13:
+    resolution: {integrity: sha512-Q1trJ16H8yPNa7qk0XxibXsa4LHfxNO5My78jgT+F9J6lqupKtKopOuMNFbjlEYeDePebNyd4raFugiW9eFG+g==}
     dependencies:
-      '@aws-amplify/core': 5.1.1
+      '@aws-amplify/core': 5.1.3
       amazon-cognito-identity-js: 6.1.2_encoding@0.1.13
       tslib: 1.14.1
     transitivePeerDependencies:
       - encoding
       - react-native
-    dev: false
 
-  /@aws-amplify/auth/5.1.13_encoding@0.1.13:
-    resolution: {integrity: sha512-bRx8TrbTCNEBRfUWqD0m/mASW2WmjFCAL10VVMT19BsTERYe6vya5J4Q+FCc4fqY3RzvoiM7cnXxsXc8eRe4Hw==}
+  /@aws-amplify/cache/5.0.20:
+    resolution: {integrity: sha512-G+mvikcZsROqP9gXqM4v8Cu93ufm5j6qwfHM2z2jMAZrFsdda+biK0hcEAPoKX+t5CPVr37Z2AmRf03KuvrgkA==}
     dependencies:
-      '@aws-amplify/core': 5.1.2
-      amazon-cognito-identity-js: 6.1.2_encoding@0.1.13
-      tslib: 1.14.1
-    transitivePeerDependencies:
-      - encoding
-      - react-native
-    dev: true
-
-  /@aws-amplify/cache/5.0.19:
-    resolution: {integrity: sha512-xhtBJlmVo0B89vc9tIrKiE9STXMYZgJOIQ/u6aAoPgy98W6QYof0+ObsFLKzSsq8kdLoM8+eAlmppTD8sdUODQ==}
-    dependencies:
-      '@aws-amplify/core': 5.1.2
+      '@aws-amplify/core': 5.1.3
       tslib: 1.14.1
     transitivePeerDependencies:
       - react-native
     dev: true
 
-  /@aws-amplify/core/5.1.1:
-    resolution: {integrity: sha512-koBmdsqrc1K9Wy0Qxm9AsA3kN7mDE6vYkt78L83FgTb3M2anUmqXxMwzw64qF6+vaEr9bbTeE1ID84fwry2Cog==}
+  /@aws-amplify/core/5.1.3:
+    resolution: {integrity: sha512-GGShM5gkUnvWBsxO8cYBS5eAg0S5tGkTa45SSFPoJSOFAVx6nFHKWTW2FGp7p+ub4uB0phbUcv7iypwhZhcuSg==}
     dependencies:
       '@aws-crypto/sha256-js': 1.2.2
       '@aws-sdk/client-cloudwatch-logs': 3.6.1
@@ -245,31 +237,14 @@ packages:
       zen-observable-ts: 0.8.19
     transitivePeerDependencies:
       - react-native
-    dev: false
 
-  /@aws-amplify/core/5.1.2:
-    resolution: {integrity: sha512-NokXkmQtaeAdVCuC5iqBSod+CbNvvGvNONUiphfU+/FAtaDJWFaZeyQieTSlqUZ0qFZdVbOSZamshTqNfE1tlA==}
+  /@aws-amplify/datastore/4.1.2_encoding@0.1.13:
+    resolution: {integrity: sha512-+k08PqTkacOrpg2cslgTzXowefH3nxj4VwnM7bFeIXVw0PIsyeBlVOVi7WUaZ+xm5YdJypPdA33mX4zME/1/4g==}
     dependencies:
-      '@aws-crypto/sha256-js': 1.2.2
-      '@aws-sdk/client-cloudwatch-logs': 3.6.1
-      '@aws-sdk/client-cognito-identity': 3.6.1
-      '@aws-sdk/credential-provider-cognito-identity': 3.6.1
-      '@aws-sdk/types': 3.6.1
-      '@aws-sdk/util-hex-encoding': 3.6.1
-      tslib: 1.14.1
-      universal-cookie: 4.0.4
-      zen-observable-ts: 0.8.19
-    transitivePeerDependencies:
-      - react-native
-    dev: true
-
-  /@aws-amplify/datastore/4.1.1_encoding@0.1.13:
-    resolution: {integrity: sha512-vzfBV3k67GFyabBH0M0d3GqUkscSRUHz8xxr7B/uq7wVHiZK8r1jS0PnvKQQfWpE/to9HZRXvH3ZdGvbw919kg==}
-    dependencies:
-      '@aws-amplify/api': 5.0.19_encoding@0.1.13
-      '@aws-amplify/auth': 5.1.13_encoding@0.1.13
-      '@aws-amplify/core': 5.1.2
-      '@aws-amplify/pubsub': 5.1.2_encoding@0.1.13
+      '@aws-amplify/api': 5.0.20_encoding@0.1.13
+      '@aws-amplify/auth': 5.1.14_encoding@0.1.13
+      '@aws-amplify/core': 5.1.3
+      '@aws-amplify/pubsub': 5.1.3_encoding@0.1.13
       amazon-cognito-identity-js: 6.1.2_encoding@0.1.13
       idb: 5.0.6
       immer: 9.0.6
@@ -283,10 +258,10 @@ packages:
       - react-native
     dev: true
 
-  /@aws-amplify/geo/2.0.19_aws-crt@1.15.9:
-    resolution: {integrity: sha512-QJ6h12dJeQJh1tbDjIeA11JGVnFT+oU0jvVTkBN1py0CKmyd7BLKKlF3EBRU0IGK/5gQNPNXdH032ugSWX1R8g==}
+  /@aws-amplify/geo/2.0.20_aws-crt@1.15.9:
+    resolution: {integrity: sha512-D7WfJTPro2HtEs0saOT4nSOpGW8m3Dy9IZOB3Ik3YqFvHCAw6vDsIb5nZlocf1CHy3H0kVpyODii7hLuOUE2Jw==}
     dependencies:
-      '@aws-amplify/core': 5.1.2
+      '@aws-amplify/core': 5.1.3
       '@aws-sdk/client-location': 3.186.0_aws-crt@1.15.9
       '@turf/boolean-clockwise': 6.5.0
       camelcase-keys: 6.2.2
@@ -296,10 +271,10 @@ packages:
       - react-native
     dev: true
 
-  /@aws-amplify/interactions/5.0.19_aws-crt@1.15.9:
-    resolution: {integrity: sha512-o5zmlVm3KqL2P0cJaSNKIW+A5Pq6U1uVgyY6PE5fG7pO6Pk0uhwQVaI7PdqA4BUJ8EF9CAnlKlKFPCpaJAPD+w==}
+  /@aws-amplify/interactions/5.0.20_aws-crt@1.15.9:
+    resolution: {integrity: sha512-0E1FTxQSmgXmksRHPgNBBgn9OYF5zMQGpIVC+VrmeyLl4tkRIYX9e/+iVZ/VWOG2oZjjIfIp07zFSzwH0OTe6Q==}
     dependencies:
-      '@aws-amplify/core': 5.1.2
+      '@aws-amplify/core': 5.1.3
       '@aws-sdk/client-lex-runtime-service': 3.186.0_aws-crt@1.15.9
       '@aws-sdk/client-lex-runtime-v2': 3.186.0_aws-crt@1.15.9
       base-64: 1.0.0
@@ -311,11 +286,11 @@ packages:
       - react-native
     dev: true
 
-  /@aws-amplify/notifications/1.0.19_aws-crt@1.15.9:
-    resolution: {integrity: sha512-WhxOUIeOcU043LIweTp5wbTCRF6S5XPKDSV1DrIyidWVd1HNFay5F+fIjlhBDxZEfmmj6qRKWG2OAoWyhSO1Xg==}
+  /@aws-amplify/notifications/1.0.20_aws-crt@1.15.9:
+    resolution: {integrity: sha512-6gXheaIxXL9XGZdlVfk06yInCVKXTYfCCyh8fqVWznlh4+pwhjIaxs9PkNoHDvhFlMnALZgVyITariLdxuxQyg==}
     dependencies:
-      '@aws-amplify/cache': 5.0.19
-      '@aws-amplify/core': 5.1.2
+      '@aws-amplify/cache': 5.0.20
+      '@aws-amplify/core': 5.1.3
       '@aws-sdk/client-pinpoint': 3.186.0_aws-crt@1.15.9
       lodash: 4.17.21
       uuid: 3.4.0
@@ -324,11 +299,11 @@ packages:
       - react-native
     dev: true
 
-  /@aws-amplify/predictions/5.0.19:
-    resolution: {integrity: sha512-btcrb92uVxfqyDst8RMBE2rpyP0yB6HPm1TGxArsLO1XH2ky3ipsXZjVvpAPx63E4Ne67OD5+ZrDQ461aT5Rtw==}
+  /@aws-amplify/predictions/5.0.20:
+    resolution: {integrity: sha512-g3jsY307gQxGBL6s+4b1Bz7eyYRWGDP2CigTtyEQUtegPtGa1thCAU7z/5CcmNfwLQgY3zZjAqvLCX6y3zf3HQ==}
     dependencies:
-      '@aws-amplify/core': 5.1.2
-      '@aws-amplify/storage': 5.1.9
+      '@aws-amplify/core': 5.1.3
+      '@aws-amplify/storage': 5.1.10
       '@aws-sdk/client-comprehend': 3.6.1
       '@aws-sdk/client-polly': 3.6.1
       '@aws-sdk/client-rekognition': 3.6.1
@@ -343,12 +318,12 @@ packages:
       - react-native
     dev: true
 
-  /@aws-amplify/pubsub/5.1.2_encoding@0.1.13:
-    resolution: {integrity: sha512-DoYVbkQ/zKFGWFtPEIZ2Td1T22LdNbtetmawRygeg9hw9MEMOD18YGAtndXGwiu5/FV/G/qSCCcq2iLBEcC1BA==}
+  /@aws-amplify/pubsub/5.1.3_encoding@0.1.13:
+    resolution: {integrity: sha512-PBC3V2sjLc6cSYKxYiYA6crzoZYFih0VMDBWak7I1PpYLFq1XWNdmMa+a3I0FrnoESzROioGRi9CdDJevVaWjw==}
     dependencies:
-      '@aws-amplify/auth': 5.1.13_encoding@0.1.13
-      '@aws-amplify/cache': 5.0.19
-      '@aws-amplify/core': 5.1.2
+      '@aws-amplify/auth': 5.1.14_encoding@0.1.13
+      '@aws-amplify/cache': 5.0.20
+      '@aws-amplify/core': 5.1.3
       graphql: 15.8.0
       tslib: 1.14.1
       uuid: 3.4.0
@@ -358,10 +333,10 @@ packages:
       - react-native
     dev: true
 
-  /@aws-amplify/storage/5.1.9:
-    resolution: {integrity: sha512-dJ9JEfi+c23mB5SJb2FghN5xD0At5GN03bBKv1icicZZRQulMl7Fa2UAuyyQE/pbgJ/NcJmPxYT4rlrV87UYRg==}
+  /@aws-amplify/storage/5.1.10:
+    resolution: {integrity: sha512-qPukrOiGX9qyjSM5ZIcgPaU6D5oNRoF7xk61sb2YuxF9n2URVZ2fBY3z7qigqSS4lufZ2rJoFGo1lp8hWj07eQ==}
     dependencies:
-      '@aws-amplify/core': 5.1.2
+      '@aws-amplify/core': 5.1.3
       '@aws-sdk/client-s3': 3.6.1
       '@aws-sdk/s3-request-presigner': 3.6.1
       '@aws-sdk/util-create-request': 3.6.1
@@ -408,7 +383,7 @@ packages:
       '@aws-crypto/sha256-js': 1.2.2
       '@aws-crypto/supports-web-crypto': 1.0.0
       '@aws-crypto/util': 1.2.2
-      '@aws-sdk/types': 3.6.1
+      '@aws-sdk/types': 3.186.0
       '@aws-sdk/util-locate-window': 3.208.0
       tslib: 1.14.1
 
@@ -429,7 +404,7 @@ packages:
     resolution: {integrity: sha512-Nr1QJIbW/afYYGzYvrF70LtaHrIRtd4TNAglX8BvlfxJLZ45SAmueIKYl5tWoNBPzp65ymXGFK0Bb1vZUpuc9g==}
     dependencies:
       '@aws-crypto/util': 1.2.2
-      '@aws-sdk/types': 3.6.1
+      '@aws-sdk/types': 3.186.0
       tslib: 1.14.1
 
   /@aws-crypto/sha256-js/2.0.0:
@@ -454,7 +429,7 @@ packages:
   /@aws-crypto/util/1.2.2:
     resolution: {integrity: sha512-H8PjG5WJ4wz0UXAFXeJjWCW1vkvIJ3qUUD+rGRwJ2/hj+xT58Qle2MTql/2MGzkU+1JLAFuR6aJpLAjHwhmwwg==}
     dependencies:
-      '@aws-sdk/types': 3.6.1
+      '@aws-sdk/types': 3.186.0
       '@aws-sdk/util-utf8-browser': 3.259.0
       tslib: 1.14.1
 
@@ -2003,7 +1978,6 @@ packages:
   /@aws-sdk/types/3.186.0:
     resolution: {integrity: sha512-NatmSU37U+XauMFJCdFI6nougC20JUFZar+ump5wVv0i54H+2Refg1YbFDxSs0FY28TSB9jfhWIpfFBmXgL5MQ==}
     engines: {node: '>= 12.0.0'}
-    dev: true
 
   /@aws-sdk/types/3.6.1:
     resolution: {integrity: sha512-4Dx3eRTrUHLxhFdLJL8zdNGzVsJfAxtxPYYGmIddUkO2Gj3WA1TGjdfG4XN/ClI6e1XonCHafQX3UYO/mgnH3g==}
@@ -2855,7 +2829,7 @@ packages:
       tslib: 2.5.0
     dev: true
 
-  /@graphql-codegen/cli/3.2.2_3lxslkyhkrbtgfduwnfzitczwm:
+  /@graphql-codegen/cli/3.2.2_ujxv3cmwv3unuq5cvjlxb6gvse:
     resolution: {integrity: sha512-u+dm/SW1heLnUL4Tyf5Uv0AxOFhTCmUPHKwRLq2yE8MPhv7+Ti4vxxUP/XGoaMNRuHlN37wLI7tpFLV1Hhm22Q==}
     hasBin: true
     peerDependencies:
@@ -2866,24 +2840,24 @@ packages:
       '@babel/types': 7.21.2
       '@graphql-codegen/core': 3.1.0_graphql@16.6.0
       '@graphql-codegen/plugin-helpers': 4.1.0_graphql@16.6.0
-      '@graphql-tools/apollo-engine-loader': 7.3.26_3lxslkyhkrbtgfduwnfzitczwm
+      '@graphql-tools/apollo-engine-loader': 7.3.26_ujxv3cmwv3unuq5cvjlxb6gvse
       '@graphql-tools/code-file-loader': 7.3.21_graphql@16.6.0
       '@graphql-tools/git-loader': 7.2.20_graphql@16.6.0
-      '@graphql-tools/github-loader': 7.3.27_3lxslkyhkrbtgfduwnfzitczwm
+      '@graphql-tools/github-loader': 7.3.27_ujxv3cmwv3unuq5cvjlxb6gvse
       '@graphql-tools/graphql-file-loader': 7.5.16_graphql@16.6.0
       '@graphql-tools/json-file-loader': 7.4.17_graphql@16.6.0
       '@graphql-tools/load': 7.8.13_graphql@16.6.0
-      '@graphql-tools/prisma-loader': 7.2.65_3lxslkyhkrbtgfduwnfzitczwm
-      '@graphql-tools/url-loader': 7.17.14_3lxslkyhkrbtgfduwnfzitczwm
+      '@graphql-tools/prisma-loader': 7.2.65_ujxv3cmwv3unuq5cvjlxb6gvse
+      '@graphql-tools/url-loader': 7.17.14_ujxv3cmwv3unuq5cvjlxb6gvse
       '@graphql-tools/utils': 9.2.1_graphql@16.6.0
       '@parcel/watcher': 2.1.0
-      '@whatwg-node/fetch': 0.8.2_@types+node@18.15.0
+      '@whatwg-node/fetch': 0.8.2_@types+node@18.15.3
       chalk: 4.1.2
       cosmiconfig: 7.1.0
       debounce: 1.2.1
       detect-indent: 6.1.0
       graphql: 16.6.0
-      graphql-config: 4.5.0_3lxslkyhkrbtgfduwnfzitczwm
+      graphql-config: 4.5.0_ujxv3cmwv3unuq5cvjlxb6gvse
       inquirer: 8.2.5
       is-glob: 4.0.3
       jiti: 1.17.2
@@ -3054,14 +3028,14 @@ packages:
       - supports-color
     dev: true
 
-  /@graphql-tools/apollo-engine-loader/7.3.26_3lxslkyhkrbtgfduwnfzitczwm:
+  /@graphql-tools/apollo-engine-loader/7.3.26_ujxv3cmwv3unuq5cvjlxb6gvse:
     resolution: {integrity: sha512-h1vfhdJFjnCYn9b5EY1Z91JTF0KB3hHVJNQIsiUV2mpQXZdeOXQoaWeYEKaiI5R6kwBw5PP9B0fv3jfUIG8LyQ==}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
     dependencies:
       '@ardatan/sync-fetch': 0.0.1_encoding@0.1.13
       '@graphql-tools/utils': 9.2.1_graphql@16.6.0
-      '@whatwg-node/fetch': 0.8.2_@types+node@18.15.0
+      '@whatwg-node/fetch': 0.8.2_@types+node@18.15.3
       graphql: 16.6.0
       tslib: 2.5.0
     transitivePeerDependencies:
@@ -3140,18 +3114,18 @@ packages:
       - utf-8-validate
     dev: true
 
-  /@graphql-tools/executor-http/0.1.9_qprue2kx25nzlfk4htwirtncwu:
+  /@graphql-tools/executor-http/0.1.9_kedzoti4cg6xiecsge2tvwy5ne:
     resolution: {integrity: sha512-tNzMt5qc1ptlHKfpSv9wVBVKCZ7gks6Yb/JcYJluxZIT4qRV+TtOFjpptfBU63usgrGVOVcGjzWc/mt7KhmmpQ==}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
     dependencies:
       '@graphql-tools/utils': 9.2.1_graphql@16.6.0
       '@repeaterjs/repeater': 3.0.4
-      '@whatwg-node/fetch': 0.8.2_@types+node@18.15.0
+      '@whatwg-node/fetch': 0.8.2_@types+node@18.15.3
       dset: 3.1.2
       extract-files: 11.0.0
       graphql: 16.6.0
-      meros: 1.2.1_@types+node@18.15.0
+      meros: 1.2.1_@types+node@18.15.3
       tslib: 2.5.0
       value-or-promise: 1.0.12
     transitivePeerDependencies:
@@ -3204,7 +3178,7 @@ packages:
       - supports-color
     dev: true
 
-  /@graphql-tools/github-loader/7.3.27_3lxslkyhkrbtgfduwnfzitczwm:
+  /@graphql-tools/github-loader/7.3.27_ujxv3cmwv3unuq5cvjlxb6gvse:
     resolution: {integrity: sha512-fFFC35qenyhjb8pfcYXKknAt0CXP5CkQYtLfJXgTXSgBjIsfAVMrqxQ/Y0ejeM19XNF/C3VWJ7rE308yOX6ywA==}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
@@ -3212,7 +3186,7 @@ packages:
       '@ardatan/sync-fetch': 0.0.1_encoding@0.1.13
       '@graphql-tools/graphql-tag-pluck': 7.5.0_graphql@16.6.0
       '@graphql-tools/utils': 9.2.1_graphql@16.6.0
-      '@whatwg-node/fetch': 0.8.2_@types+node@18.15.0
+      '@whatwg-node/fetch': 0.8.2_@types+node@18.15.3
       graphql: 16.6.0
       tslib: 2.5.0
     transitivePeerDependencies:
@@ -3306,12 +3280,12 @@ packages:
       tslib: 2.5.0
     dev: true
 
-  /@graphql-tools/prisma-loader/7.2.65_3lxslkyhkrbtgfduwnfzitczwm:
+  /@graphql-tools/prisma-loader/7.2.65_ujxv3cmwv3unuq5cvjlxb6gvse:
     resolution: {integrity: sha512-MuX4XrJEuOE6qYbjR9WhSInPX8iji07wA6K72hVgkvG2UBXBUAcVC/1H6iOFbs1d7rLLU2r6aWsYnD6zwzw+eA==}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
     dependencies:
-      '@graphql-tools/url-loader': 7.17.14_3lxslkyhkrbtgfduwnfzitczwm
+      '@graphql-tools/url-loader': 7.17.14_ujxv3cmwv3unuq5cvjlxb6gvse
       '@graphql-tools/utils': 9.2.1_graphql@16.6.0
       '@types/js-yaml': 4.0.5
       '@types/json-stable-stringify': 1.0.34
@@ -3364,7 +3338,7 @@ packages:
       value-or-promise: 1.0.12
     dev: true
 
-  /@graphql-tools/url-loader/7.17.14_3lxslkyhkrbtgfduwnfzitczwm:
+  /@graphql-tools/url-loader/7.17.14_ujxv3cmwv3unuq5cvjlxb6gvse:
     resolution: {integrity: sha512-7boEmrZlbViqQSSvu2VFCGi9YAY7E0BCVObiv1sLYbFR+62mo825As0haU5l7wlx1zCDyUlOleNz+X2jVvBbSQ==}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
@@ -3372,12 +3346,12 @@ packages:
       '@ardatan/sync-fetch': 0.0.1_encoding@0.1.13
       '@graphql-tools/delegate': 9.0.28_graphql@16.6.0
       '@graphql-tools/executor-graphql-ws': 0.0.12_graphql@16.6.0
-      '@graphql-tools/executor-http': 0.1.9_qprue2kx25nzlfk4htwirtncwu
+      '@graphql-tools/executor-http': 0.1.9_kedzoti4cg6xiecsge2tvwy5ne
       '@graphql-tools/executor-legacy-ws': 0.0.9_graphql@16.6.0
       '@graphql-tools/utils': 9.2.1_graphql@16.6.0
       '@graphql-tools/wrap': 9.3.8_graphql@16.6.0
       '@types/ws': 8.5.4
-      '@whatwg-node/fetch': 0.8.2_@types+node@18.15.0
+      '@whatwg-node/fetch': 0.8.2_@types+node@18.15.3
       graphql: 16.6.0
       isomorphic-ws: 5.0.0_ws@8.13.0
       tslib: 2.5.0
@@ -3724,8 +3698,8 @@ packages:
     resolution: {integrity: sha512-s2cfwagOQAS8o06TcwKfr9Wx11dNGbH2E9vJz1cqV+a/LOyhWNLUNd6JSRYNzvB4d29UuJX2M0Dj9vE1T8fRXw==}
     dev: true
 
-  /@types/node/18.15.0:
-    resolution: {integrity: sha512-z6nr0TTEOBGkzLGmbypWOGnpSpSIBorEhC4L+4HeQ2iezKCi4f77kyslRwvHeNitymGQ+oFyIWGP96l/DPSV9w==}
+  /@types/node/18.15.3:
+    resolution: {integrity: sha512-p6ua9zBxz5otCmbpb5D3U4B5Nanw6Pk3PPyX05xnxbB/fRv71N7CPmORg7uAD5P70T0xmx1pzAx/FUfa5X+3cw==}
 
   /@types/parse-json/4.0.0:
     resolution: {integrity: sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==}
@@ -3750,17 +3724,17 @@ packages:
   /@types/ws/8.5.4:
     resolution: {integrity: sha512-zdQDHKUgcX/zBc4GrwsE/7dVdAD8JR4EuiAXiiUhhfyIJXXb2+PrGshFyeXWQPMmmZ2XxgaqclgpIC7eTXc1mg==}
     dependencies:
-      '@types/node': 18.15.0
+      '@types/node': 18.15.3
 
   /@whatwg-node/events/0.0.2:
     resolution: {integrity: sha512-WKj/lI4QjnLuPrim0cfO7i+HsDSXHxNv1y0CrJhdntuO3hxWZmnXCwNDnwOvry11OjRin6cgWNF+j/9Pn8TN4w==}
     dev: true
 
-  /@whatwg-node/fetch/0.8.2_@types+node@18.15.0:
+  /@whatwg-node/fetch/0.8.2_@types+node@18.15.3:
     resolution: {integrity: sha512-6u1xGzFZvskJpQXhWreR9s1/4nsuY4iFRsTb4BC3NiDHmzgj/Hu1Ovt4iHs5KAjLzbnsjaQOI5f5bQPucqvPsQ==}
     dependencies:
       '@peculiar/webcrypto': 1.4.1
-      '@whatwg-node/node-fetch': 0.3.1_@types+node@18.15.0
+      '@whatwg-node/node-fetch': 0.3.1_@types+node@18.15.3
       busboy: 1.6.0
       urlpattern-polyfill: 6.0.2
       web-streams-polyfill: 3.2.1
@@ -3768,12 +3742,12 @@ packages:
       - '@types/node'
     dev: true
 
-  /@whatwg-node/node-fetch/0.3.1_@types+node@18.15.0:
+  /@whatwg-node/node-fetch/0.3.1_@types+node@18.15.3:
     resolution: {integrity: sha512-/U4onp5eBkRHfFe/VL+ppyupqj7z6iBtjcuPSosQNH2/y+LxRn5lyFb7Vqhb5DokjrDMjssLcqiVYnx+UABFsw==}
     peerDependencies:
       '@types/node': ^18.0.6
     dependencies:
-      '@types/node': 18.15.0
+      '@types/node': 18.15.3
       '@whatwg-node/events': 0.0.2
       busboy: 1.6.0
       fast-querystring: 1.1.1
@@ -3956,21 +3930,21 @@ packages:
       postcss-value-parser: 4.2.0
     dev: true
 
-  /aws-amplify/5.0.19_tyfqhf7tbsvfwus6scjzdkavli:
-    resolution: {integrity: sha512-NQFoJlnKtC7oVtIK0EOlHQ406Ffb3XbzDn8J5lmvQvt7TJ3oEJ7U+hBaGrH+otDtb8QmDxtczkHbOcH0sE9XBQ==}
+  /aws-amplify/5.0.20_tyfqhf7tbsvfwus6scjzdkavli:
+    resolution: {integrity: sha512-XAqw8SCspYFfF2fVbrW7TMhoDDIyznW3k0YWMd4cQzoa/WsMqwwdBIo0nrUvtmul5NRfuN0/Sf7m1c9FSG3jdQ==}
     dependencies:
-      '@aws-amplify/analytics': 6.0.19
-      '@aws-amplify/api': 5.0.19_encoding@0.1.13
-      '@aws-amplify/auth': 5.1.13_encoding@0.1.13
-      '@aws-amplify/cache': 5.0.19
-      '@aws-amplify/core': 5.1.2
-      '@aws-amplify/datastore': 4.1.1_encoding@0.1.13
-      '@aws-amplify/geo': 2.0.19_aws-crt@1.15.9
-      '@aws-amplify/interactions': 5.0.19_aws-crt@1.15.9
-      '@aws-amplify/notifications': 1.0.19_aws-crt@1.15.9
-      '@aws-amplify/predictions': 5.0.19
-      '@aws-amplify/pubsub': 5.1.2_encoding@0.1.13
-      '@aws-amplify/storage': 5.1.9
+      '@aws-amplify/analytics': 6.0.20
+      '@aws-amplify/api': 5.0.20_encoding@0.1.13
+      '@aws-amplify/auth': 5.1.14_encoding@0.1.13
+      '@aws-amplify/cache': 5.0.20
+      '@aws-amplify/core': 5.1.3
+      '@aws-amplify/datastore': 4.1.2_encoding@0.1.13
+      '@aws-amplify/geo': 2.0.20_aws-crt@1.15.9
+      '@aws-amplify/interactions': 5.0.20_aws-crt@1.15.9
+      '@aws-amplify/notifications': 1.0.20_aws-crt@1.15.9
+      '@aws-amplify/predictions': 5.0.20
+      '@aws-amplify/pubsub': 5.1.3_encoding@0.1.13
+      '@aws-amplify/storage': 5.1.10
       tslib: 2.5.0
     transitivePeerDependencies:
       - aws-crt
@@ -3996,6 +3970,11 @@ packages:
       - supports-color
       - utf-8-validate
 
+  /aws-jwt-verify/3.4.0:
+    resolution: {integrity: sha512-GmcJZ3jd3adDvVpiAY5S223z1Bz+fOfqHpOdRnDJFeS5Kt5ERggdUPa3PmHdsO/tYaqrkl3Tm15frLa84sQ8Mw==}
+    engines: {node: '>=14.0.0'}
+    dev: true
+
   /axios/0.21.4_debug@4.3.4:
     resolution: {integrity: sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==}
     dependencies:
@@ -4006,7 +3985,7 @@ packages:
   /axios/0.24.0:
     resolution: {integrity: sha512-Q6cWsys88HoPgAaFAVUb0WpPk0O8iTeisR9IMqy9G8AbO4NlpVknrnQS03zzF9PGAWgO3cgletO3VjV/P7VztA==}
     dependencies:
-      follow-redirects: 1.15.2_debug@4.3.4
+      follow-redirects: 1.15.2
     transitivePeerDependencies:
       - debug
 
@@ -4786,7 +4765,6 @@ packages:
     peerDependenciesMeta:
       debug:
         optional: true
-    dev: true
 
   /follow-redirects/1.15.2_debug@4.3.4:
     resolution: {integrity: sha512-VQLG33o04KaQ8uYi2tVNbdrWp1QWxNNea+nmIB4EVM28v0hmP17z7aG1+wAkNzVq4KeXTq3221ye5qTJP91JwA==}
@@ -4932,7 +4910,7 @@ packages:
   /graceful-fs/4.2.10:
     resolution: {integrity: sha512-9ByhssR2fPVsNZj478qUUbKfmL0+t5BDVyjShtyZZLiK7ZDAArFFfopyOTj0M05wE2tJPisA4iTnnXl2YoPvOA==}
 
-  /graphql-config/4.5.0_3lxslkyhkrbtgfduwnfzitczwm:
+  /graphql-config/4.5.0_ujxv3cmwv3unuq5cvjlxb6gvse:
     resolution: {integrity: sha512-x6D0/cftpLUJ0Ch1e5sj1TZn6Wcxx4oMfmhaG9shM0DKajA9iR+j1z86GSTQ19fShbGvrSSvbIQsHku6aQ6BBw==}
     engines: {node: '>= 10.0.0'}
     peerDependencies:
@@ -4946,7 +4924,7 @@ packages:
       '@graphql-tools/json-file-loader': 7.4.17_graphql@16.6.0
       '@graphql-tools/load': 7.8.13_graphql@16.6.0
       '@graphql-tools/merge': 8.4.0_graphql@16.6.0
-      '@graphql-tools/url-loader': 7.17.14_3lxslkyhkrbtgfduwnfzitczwm
+      '@graphql-tools/url-loader': 7.17.14_ujxv3cmwv3unuq5cvjlxb6gvse
       '@graphql-tools/utils': 9.2.1_graphql@16.6.0
       cosmiconfig: 8.0.0
       graphql: 16.6.0
@@ -5508,7 +5486,7 @@ packages:
     engines: {node: '>= 8'}
     dev: true
 
-  /meros/1.2.1_@types+node@18.15.0:
+  /meros/1.2.1_@types+node@18.15.3:
     resolution: {integrity: sha512-R2f/jxYqCAGI19KhAvaxSOxALBMkaXWH2a7rOyqQw+ZmizX5bKkEYWLzdhC+U82ZVVPVp6MCXe3EkVligh+12g==}
     engines: {node: '>=13'}
     peerDependencies:
@@ -5517,7 +5495,7 @@ packages:
       '@types/node':
         optional: true
     dependencies:
-      '@types/node': 18.15.0
+      '@types/node': 18.15.3
     dev: true
 
   /micromatch/4.0.5:
@@ -6656,9 +6634,9 @@ packages:
   /typedarray/0.0.6:
     resolution: {integrity: sha512-/aCDEGatGvZ2BIk+HmLf4ifCJFwvKFNb9/JeZPMulfgFracn9QFcAf5GO8B/mweUjSoblS5In0cWhqpfs/5PQA==}
 
-  /typescript/4.9.5:
-    resolution: {integrity: sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==}
-    engines: {node: '>=4.2.0'}
+  /typescript/5.0.2:
+    resolution: {integrity: sha512-wVORMBGO/FAs/++blGNeAVdbNKtIh1rbBL2EyQ1+J9lClJ93KiiKe8PmFIVdXhHcyv44SL9oglmfeSsndo0jRw==}
+    engines: {node: '>=12.20'}
     hasBin: true
     dev: true
 
