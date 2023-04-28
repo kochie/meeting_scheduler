@@ -1,6 +1,4 @@
-"use client";
-import { Auth } from "@aws-amplify/auth";
-import { useEffect, useState, Fragment } from "react";
+import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import {
   Bars3CenterLeftIcon,
@@ -15,26 +13,73 @@ import {
   ChevronRightIcon,
   MagnifyingGlassIcon,
 } from "@heroicons/react/20/solid";
+import { headers, cookies } from "next/headers";
+import { Amplify, withSSRContext } from "aws-amplify";
+import { Auth } from "@aws-amplify/auth";
+import ProfileDropdown from "@/components/profile-dropdown";
 
-// Auth.configure({
-//   userPoolId: process.env.NEXT_PUBLIC_USERPOOL_ID,
-//   userPoolWebClientId: process.env.NEXT_PUBLIC_USERPOOL_CLIENT_ID,
-//   region: process.env.NEXT_PUBLIC_REGION,
-// });
+Amplify.configure({
+  Auth: {
+    userPoolId: process.env.NEXT_PUBLIC_USERPOOL_ID,
+    userPoolWebClientId: process.env.NEXT_PUBLIC_USERPOOL_CLIENT_ID,
+    region: process.env.NEXT_PUBLIC_REGION,
+  },
+  ssr: true,
+});
 
-export default function Page() {
-  const [token, setToken] = useState("");
-
-  async function getToken() {
-    const user = await Auth.currentAuthenticatedUser();
-    setToken(user.signInUserSession.idToken.jwtToken);
+const withAuth = async (context?) => {
+  try {
+    const SSR = withSSRContext(context);
+    const user = await SSR.Auth.currentAuthenticatedUser();
+    return user;
+  } catch (error) {
+    // context.res.writeHead(301, { Location: '/sign-in' });
+    // context.res.end();
+    console.error(error)
+    return null;
   }
+};
 
-  useEffect(() => {
-    getToken();
-  }, []);
+export default async function Page() {
+  // const [token, setToken] = useState("");
+  const headersList = headers();
+  const cookieStore = cookies();
 
-  console.log(token);
+  console.log(cookieStore.getAll().map(c => c.name+c.value))
+
+  // const cookie = headersList.has("cookie") ? headersList.get("cookie") : "";
+  // console.log("COOKIE", cookie);
+  // const { Auth: ServerAuth } = withSSRContext({
+  //   modules: [Auth],
+  //   req: {
+  //     headers: {
+  //       cookie,
+  //     },
+  //   },
+  // });
+  // console.log(ServerAuth);
+
+
+  const auth = await withAuth();
+  console.log(auth)
+
+  // try {
+  //   const user = await ServerAuth.currentAuthenticatedUser();
+  //   console.log(user);
+  // } catch (err) {
+  //   console.error(err);
+  // }
+
+  // async function getToken() {
+  //   const user = await Auth.currentAuthenticatedUser();
+  //   setToken(user.signInUserSession.idToken.jwtToken);
+  // }
+
+  // useEffect(() => {
+  //   getToken();
+  // }, []);
+
+  // console.log(token);
 
   return (
     <>
@@ -94,76 +139,7 @@ export default function Page() {
               </button>
 
               {/* Profile dropdown */}
-              <Menu as="div" className="relative ml-3">
-                <div>
-                  <Menu.Button className="flex max-w-xs items-center rounded-full bg-white text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 lg:rounded-md lg:p-2 lg:hover:bg-gray-50">
-                    <img
-                      className="h-8 w-8 rounded-full"
-                      src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                      alt=""
-                    />
-                    <span className="ml-3 hidden text-sm font-medium text-gray-700 lg:block">
-                      <span className="sr-only">Open user menu for </span>
-                      Emilia Birch
-                    </span>
-                    <ChevronDownIcon
-                      className="ml-1 hidden h-5 w-5 flex-shrink-0 text-gray-400 lg:block"
-                      aria-hidden="true"
-                    />
-                  </Menu.Button>
-                </div>
-                <Transition
-                  as={Fragment}
-                  enter="transition ease-out duration-100"
-                  enterFrom="transform opacity-0 scale-95"
-                  enterTo="transform opacity-100 scale-100"
-                  leave="transition ease-in duration-75"
-                  leaveFrom="transform opacity-100 scale-100"
-                  leaveTo="transform opacity-0 scale-95"
-                >
-                  <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                    <Menu.Item>
-                      {({ active }) => (
-                        <a
-                          href="#"
-                          className={classNames(
-                            active ? "bg-gray-100" : "",
-                            "block px-4 py-2 text-sm text-gray-700"
-                          )}
-                        >
-                          Your Profile
-                        </a>
-                      )}
-                    </Menu.Item>
-                    <Menu.Item>
-                      {({ active }) => (
-                        <a
-                          href="#"
-                          className={classNames(
-                            active ? "bg-gray-100" : "",
-                            "block px-4 py-2 text-sm text-gray-700"
-                          )}
-                        >
-                          Settings
-                        </a>
-                      )}
-                    </Menu.Item>
-                    <Menu.Item>
-                      {({ active }) => (
-                        <a
-                          href="#"
-                          className={classNames(
-                            active ? "bg-gray-100" : "",
-                            "block px-4 py-2 text-sm text-gray-700"
-                          )}
-                        >
-                          Logout
-                        </a>
-                      )}
-                    </Menu.Item>
-                  </Menu.Items>
-                </Transition>
-              </Menu>
+              <ProfileDropdown />
             </div>
           </div>
         </div>
