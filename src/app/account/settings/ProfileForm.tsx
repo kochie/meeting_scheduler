@@ -8,17 +8,19 @@ import { use } from "react";
 import { redirect } from "next/navigation";
 import { useNotification } from "@/components/notifications/context";
 
-export const ProfileForm = () => {
-  const userId = use(
-    Auth.currentAuthenticatedUser()
-      .catch(() => ({
-        attributes: {
-          email: "",
-        },
-      }))
-      .then((user) => user.attributes.email)
-  );
+export const ProfileForm = ({ user }) => {
+  // const userId = use(
+  //   Auth.currentAuthenticatedUser()
+  //     .catch(() => ({
+  //       attributes: {
+  //         email: "",
+  //       },
+  //     }))
+  //     .then((user) => user.attributes.email)
+  // );
+  const userId = "robert@kochie.io";
 
+  console.log(userId);
   if (!userId) {
     redirect("/login");
   }
@@ -38,18 +40,26 @@ export const ProfileForm = () => {
         username: data?.getProfile?.username ?? "",
         about: data?.getProfile?.about ?? "",
       }}
-      onSubmit={async (values) => {
+      onSubmit={async (values, { setSubmitting }) => {
         console.log(userId, values);
-        await setProfile({
-          variables: {
-            userId,
-            profile: { username: values.username, about: values.about },
-          },
-        });
-        addNotification({ message: "Profile updated" });
+        try {
+          await setProfile({
+            variables: {
+              userId,
+              profile: { username: values.username, about: values.about },
+            },
+          });
+        } catch (error) {
+          addNotification({ message: error.message, title: "Error!" });
+        }
+
+        addNotification({ message: "Profile updated", title: "Success!" });
+        // await new Promise((resolve) => setTimeout(resolve, 2000));
+        console.log("done");
+        setSubmitting(false);
       }}
     >
-      {({ values }) => (
+      {({ values, isSubmitting }) => (
         <Form>
           <div className="shadow sm:overflow-hidden sm:rounded-md">
             <div className="space-y-6 bg-white px-4 py-5 sm:p-6">
@@ -167,9 +177,10 @@ export const ProfileForm = () => {
             <div className="bg-gray-50 px-4 py-3 text-right sm:px-6">
               <button
                 type="submit"
-                className="inline-flex justify-center rounded-md bg-indigo-600 py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+                className="inline-flex w-20 h-9 justify-center rounded-md bg-indigo-600 py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 disabled:bg-indigo-400 disabled:cursor-not-allowed"
+                disabled={isSubmitting}
               >
-                Save
+                {isSubmitting ? Spinner : "Save"}
               </button>
             </div>
           </div>
@@ -178,3 +189,22 @@ export const ProfileForm = () => {
     </Formik>
   );
 };
+
+const Spinner = (
+  <div className="">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={1.5}
+      stroke="currentColor"
+      className="h-5 w-5 animate-spin"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99"
+      />
+    </svg>
+  </div>
+);

@@ -1,6 +1,11 @@
 import { ProfileForm } from "./ProfileForm";
+import { withSSRContext } from "aws-amplify";
 
-export default function Page() {
+export default async function Page() {
+  const { Auth } = withSSRContext();
+
+  const user = await Auth.currentAuthenticatedUser();
+
   return (
     <div className="bg-slate-100 p-5 w-[calc(100%-256px)] float-right">
       {/* <h1>Settings</h1> */}
@@ -19,7 +24,7 @@ export default function Page() {
             </div>
           </div>
           <div className="mt-5 md:col-span-2 md:mt-0">
-            <ProfileForm />
+            <ProfileForm user={user} />
           </div>
         </div>
       </div>

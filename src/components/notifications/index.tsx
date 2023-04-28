@@ -8,11 +8,13 @@ export interface NotificationProps {
   id: number;
   message: string;
   timeout: number;
+  title: string;
 }
 
 export default function Notification({
   timeout = 5000,
   message,
+  title,
 }: NotificationProps) {
   const [show, setShow] = useState(true);
 
@@ -48,10 +50,8 @@ export default function Notification({
                 />
               </div>
               <div className="ml-3 w-0 flex-1 pt-0.5">
-                <p className="text-sm font-medium text-gray-900">{message}</p>
-                <p className="mt-1 text-sm text-gray-500">
-                  Anyone with a link can now view this file.
-                </p>
+                <p className="text-sm font-medium text-gray-900">{title}</p>
+                <p className="mt-1 text-sm text-gray-500">{message}</p>
               </div>
               <div className="ml-4 flex flex-shrink-0">
                 <button

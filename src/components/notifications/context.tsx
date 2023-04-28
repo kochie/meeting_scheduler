@@ -6,14 +6,14 @@ import Notification, { NotificationProps } from ".";
 let id = 0;
 
 const NotificationContext = createContext({
-  addNotification: ({ message, timeout = 5000 }) => {},
+  addNotification: ({ message, timeout = 5000, title }) => {},
 });
 
 export const NotificationProvider = ({ children }) => {
   const [notifications, setNotifications] = useState<NotificationProps[]>([]);
 
-  const addNotification = ({ message, timeout = 5000 }) => {
-    setNotifications([...notifications, { id: id++, message, timeout }]);
+  const addNotification = ({ message, timeout = 5000, title }) => {
+    setNotifications([...notifications, { id: id++, message, timeout, title }]);
   };
 
   return (
